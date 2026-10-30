@@ -2,6 +2,9 @@
 
 A lightweight Chrome extension that adds a comfortable dark mode to Fiverr, with an adjustable dark-gray background.
 
+> 🤖 **This extension was built with [Claude](https://claude.ai), an AI assistant by Anthropic.**
+> I described what I wanted, and Claude wrote the code.
+
 > ⚠️ Not affiliated with or endorsed by Fiverr.
 
 ## Features
