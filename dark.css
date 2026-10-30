@@ -1,0 +1,28 @@
+/* Invierte la página (parcialmente, para que el fondo quede gris oscuro en vez de negro)
+   y re-invierte imágenes/videos para que se vean normales.
+   --fdm-p y --fdm-c los ajusta content.js según el control deslizante. */
+html.fdm-on {
+  filter: invert(var(--fdm-p, 0.85)) hue-rotate(180deg) !important;
+  background: #fff !important;
+}
+
+html.fdm-on img,
+html.fdm-on picture,
+html.fdm-on video,
+html.fdm-on iframe,
+html.fdm-on canvas,
+html.fdm-on svg image,
+html.fdm-on [style*="background-image"] {
+  filter: invert(1) hue-rotate(180deg) contrast(var(--fdm-c, 1.2)) !important;
+}
+
+/* Evita doble inversión de imágenes dentro de elementos con fondo de imagen */
+html.fdm-on [style*="background-image"] img,
+html.fdm-on picture img {
+  filter: none !important;
+}
+
+/* Scrollbar */
+html.fdm-on ::-webkit-scrollbar { width: 10px; height: 10px; }
+html.fdm-on ::-webkit-scrollbar-track { background: #e8e8e8; }
+html.fdm-on ::-webkit-scrollbar-thumb { background: #aaa; border-radius: 5px; }

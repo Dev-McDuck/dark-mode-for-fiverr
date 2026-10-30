@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; padding: 16px 18px; width: 220px; background: #2a2a30; color: #eee;
+         font-family: system-ui, sans-serif; }
+  h1 { font-size: 15px; margin: 0 0 14px; color: #1dbf73; }
+  label { display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 14px; }
+  .sw { position: relative; width: 42px; height: 24px; }
+  .sw input { opacity: 0; width: 0; height: 0; }
+  .sl { position: absolute; inset: 0; background: #555; border-radius: 24px; transition: .2s; }
+  .sl::before { content: ""; position: absolute; width: 18px; height: 18px; left: 3px; top: 3px;
+                background: #fff; border-radius: 50%; transition: .2s; }
+  input:checked + .sl { background: #1dbf73; }
+  input:checked + .sl::before { transform: translateX(18px); }
+  .row { margin-top: 16px; font-size: 13px; }
+  .row .top { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  input[type=range] { width: 100%; accent-color: #1dbf73; }
+  .ends { display: flex; justify-content: space-between; font-size: 11px; color: #999; }
+</style>
+</head>
+<body>
+  <h1>🌙 Fiverr Dark Mode</h1>
+  <label>
+    Modo oscuro
+    <span class="sw"><input type="checkbox" id="toggle"><span class="sl"></span></span>
+  </label>
+  <div class="row">
+    <div class="top"><span>Tono del fondo</span><span id="val"></span></div>
+    <input type="range" id="gray" min="0" max="30" step="1">
+    <div class="ends"><span>Negro</span><span>Gris</span></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
